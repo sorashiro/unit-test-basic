@@ -49,6 +49,104 @@
         </p>
       </section>
 
+      <section>
+        <section>
+          <h2>参考资料</h2>
+        </section>
+        <section>
+          <h3>Pragmatic Unit Testing in Java with JUnit</h3>
+          <h4>by Andy Hunt and Dave Thomas</h4>
+          <a href="https://pragprog.com/book/utj/pragmatic-unit-testing-in-java-with-junit">
+            <img width="300" height="365" data-src="image/utj.jpg" alt="Pragmatic Unit Testing in Java with JUnit">
+          </a>
+          <aside data-markdown class="notes">
+            这本书的中文名称叫：《单元测试之道 Java版：使用 JUnit》，作者是大名鼎鼎的 Andy Hunt 和 Dave Thomas，这本书还有一个 C# 版，使用的是 NUnit。 这本书发行于2003年9月1日，至今已经过去了将近13年的时间，期间英文版总共印刷了7次，最后一次印刷是在2010年1月6日，而如今的单元测试实践已然不同。
+          </aside>
+        </section>
+        <section>
+          <h3>Pragmatic Unit Testing in Java 8 with JUnit</h3>
+          <h4>by Jeff Langr, with Andy Hunt and Dave Thomas</h4>
+          <a href="https://pragprog.com/book/utj/pragmatic-unit-testing-in-java-with-junit">
+            <img width="300" height="360" data-src="image/utj2.jpg" alt="Pragmatic Unit Testing in Java with JUnit">
+          </a>
+          <aside data-markdown class="notes">
+            这本书于2015年3月16日出版，它已前一本为基础，参考这十多年来的单元测试最佳实践，以重构和整洁代码为纽带，并引入了测试驱动开发的内容，可以说，是目前最为丰富、准确和与时俱进的单元测试和测试驱动开发书籍。
+          </aside>
+        </section>
+        <section>
+          <h3>其它</h3>
+          <ul>
+            <li>Google</li>
+            <li>维基百科</li>
+            <li>个人经验</li>
+            <li>学习总结</li>
+          </ul>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>一些基础概念</h2>
+        </section>
+        <section>
+          <h3>什么是单元测试（Unit Test）？</h3>
+          <p class="fragment fade-in">
+            "Unit testing is when you write test code to verify
+            <span class="fragment grow highlight-red">units</span> of code."
+          </p>
+
+          <aside class="notes">
+            单元测试就是在编程时用测试代码来验证代码中的各个单元。
+          </aside>
+        </section>
+        <section>
+          <h3>什么是单元（Unit）？</h2>
+          <ul>
+            <li class="fragment fade-in">
+              在尺寸上并没有清晰的定义。
+            </li>
+            <li class="fragment fade-in">
+              一小段展现出某些“有用的行为”的代码
+            </li>
+            <li class="fragment fade-in">
+              一个单元自身通常不表示完整的端对端（end-to-end）行为，它只表示这个端对端行为中的一个子部分。
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>何时、何故需要写单元测试？</h2>
+          <ul>
+            <li class="fragment fade-in">
+              你<span class="fragment grow highlight-red">刚刚</span>完成了一个特性（Feature）的编码并且想确保它能够按照预期工作。
+            </li>
+            <li class="fragment fade-in">
+              你想用文档记录一个代码中的修改，以便你或其他人能够在以后明白相关的意图。
+            </li>
+            <li class="fragment fade-in">
+              你需要修改代码，同时希望确保这些即将来临的修改不会破坏任何已经存在的行为。
+            </li>
+            <li class="fragment fade-in">
+              你希望了解当前系统中的行为。
+            </li>
+            <li class="fragment fade-in">
+              你希望知道第三方代码的行为在什么时候会与你的期望不符。
+            </li>
+          </ul>
+        </section>
+        <section style="text-align: left">
+          <h3 style="color: red">更重要的是：</h3>
+          <p>
+            好的单元测试能够增强你将系统交付生产环境时的信心，但你仍旧需要使用集成测试（Integration Test）和（或）验收测试（Acceptance Test）来验证端对端的行为。
+          </p>
+
+          <aside class="notes">
+            这一句话清晰的指出了单元测试与集成测试或验收测试的区别和侧重，请再一次牢记：单元测试不验证端对端的行为。
+
+            集成测试和验收测试的内容不属于我们所讨论的范围，所以不多做讲解。
+          </aside>
+        </section>
+      </section>
+
     </div>
 
   </div>
