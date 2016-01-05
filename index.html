@@ -95,7 +95,7 @@
             <span class="fragment grow highlight-red">units</span> of code."
           </p>
 
-          <aside class="notes">
+          <aside data-markdown class="notes">
             单元测试就是在编程时用测试代码来验证代码中的各个单元。
           </aside>
         </section>
@@ -139,7 +139,7 @@
             好的单元测试能够增强你将系统交付生产环境时的信心，但你仍旧需要使用集成测试（Integration Test）和（或）验收测试（Acceptance Test）来验证端对端的行为。
           </p>
 
-          <aside class="notes">
+          <aside data-markdown class="notes">
             这一句话清晰的指出了单元测试与集成测试或验收测试的区别和侧重，请再一次牢记：单元测试不验证端对端的行为。
 
             集成测试和验收测试的内容不属于我们所讨论的范围，所以不多做讲解。
@@ -176,7 +176,7 @@
           <h3>测试即文档</h3>
         </section>
         <section>
-          <h3>Case, Fixture, Suit</h3>
+          <h3>Case, Fixture, Suite</h3>
         </section>
         <section>
           <h3>测试行为而不是测试方法</h3>
@@ -195,6 +195,42 @@
       <section>
         <section>
           <h2>什么是好的测试？</h2>
+        </section>
+        <section>
+          <h3>FIRST 原则</h3>
+          <ol class="fragment fade-in" data-fragment-index="1">
+            <li><span class="fragment grow highlight-red" data-fragment-index="2">F</span>ast</li>
+            <li><span class="fragment grow highlight-red" data-fragment-index="2">I</span>solated</li>
+            <li><span class="fragment grow highlight-red" data-fragment-index="2">R</span>epeatable</li>
+            <li><span class="fragment grow highlight-red" data-fragment-index="2">S</span>elf-Validating</li>
+            <li><span class="fragment grow highlight-red" data-fragment-index="2">T</span>imely</li>
+          </ol>
+        </section>
+        <section style="text-align: left">
+          <h4><span style="color: red">F</span>ast - 测试要足够快！</h4>
+          <p>单元测试的价值在于<span style="color: lime">持续</span>、<span style="color: lime">全面</span>、<span style="color: lime">快速</span>的反馈系统的健康程度，测试速度的降低将直接导致这些能力的降低。</p>
+          <p>所以，我们需要确保测试<span style="color: lime">易于编写</span>，<span style="color: lime">减少依赖</span>。</p>
+          <p>你的实现代码越符合<span style="color: lime">面向对象设计（OOD）</span>的原则，你的单元测试就越容易编写。</p>
+
+          <aside data-markdown class="notes">
+            假设平均我们每一个单元测试执行需要200毫秒，那么如果我们总共拥有2500个单元测试的话，运行一遍全部的测试就需要8分钟。
+
+            导致测试速度降低的主要原因是因为我们的实现代码或不正确的测试代码中有过多的依赖，尤其是那些速度明显较慢的依赖，比如文件读写、网络连接、数据库读取等。
+
+            所以我们需要保证实现代码符合面向对象设计的原则，从根本上减少代码依赖，并合理使用 Mock 技术来优化测试代码。
+          </aside>
+        </section>
+        <section style="text-align: left">
+          <h4><span style="color: red">I</span>solated</h4>
+        </section>
+        <section style="text-align: left">
+          <h4><span style="color: red">R</span>epeatable</h4>
+        </section>
+        <section style="text-align: left">
+          <h4><span style="color: red">S</span>elf-Validating</h4>
+        </section>
+        <section style="text-align: left">
+          <h4><span style="color: red">T</span>imely</h4>
         </section>
       </section>
 
@@ -217,7 +253,7 @@
       <section style="text-align: left">
         <h1>完</h1>
         <p>
-        - 欢迎分享给更多的人 <br>
+        - 请分享给更多的人 <br>
         - 获取此演示：<a href="https://github.com/tdd-training-camp/unit-test-basic">https://github.com/tdd-training-camp/unit-test-basic</a>
         </p>
       </section>
