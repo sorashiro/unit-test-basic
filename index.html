@@ -207,10 +207,10 @@
           </ol>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">F</span>ast - 测试要足够快！</h4>
-          <p>单元测试的价值在于<span style="color: lime">持续</span>、<span style="color: lime">全面</span>、<span style="color: lime">快速</span>的反馈系统的健康程度，测试速度的降低将直接导致这些能力的降低。</p>
-          <p>所以，我们需要确保测试<span style="color: lime">易于编写</span>，<span style="color: lime">减少依赖</span>。</p>
-          <p>你的实现代码越符合<span style="color: lime">面向对象设计（OOD）</span>的原则，你的单元测试就越容易编写。</p>
+          <h4><span style="color: red">F</span>ast<span class="fragment fade-in"> - 测试要足够快！</span></h4>
+          <p class="fragment fade-in">单元测试的价值在于<span style="color: lime">持续</span>、<span style="color: lime">全面</span>、<span style="color: lime">快速</span>的反馈系统的健康程度，测试速度的降低将直接导致这些能力的降低。</p>
+          <p class="fragment fade-in">所以，你需要确保测试<span style="color: lime">易于编写</span>，代码<span style="color: lime">减少依赖</span>。</p>
+          <p class="fragment fade-in">你的实现代码越符合<span style="color: lime">面向对象设计（OOD）</span>的原则，你的单元测试就越容易编写。</p>
 
           <aside data-markdown class="notes">
             假设平均我们每一个单元测试执行需要200毫秒，那么如果我们总共拥有2500个单元测试的话，运行一遍全部的测试就需要8分钟。
@@ -221,10 +221,21 @@
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">I</span>solated</h4>
+          <h4><span style="color: red">I</span>solated<span class="fragment fade-in"> - 隔离你的测试！</span></h4>
+          <p class="fragment fade-in">你应当能够在<span style="color: lime">任何时间</span>，以<span style="color: lime">任何顺序</span>，运行<span style="color: lime">任何一个测试。</span></p>
+          <p class="fragment fade-in">所以，你需要确保单元测试<span style="color: lime">不依赖于任何外部资源</span>，<span style="color: lime">不依赖于任何其它单元测试</span>，并且保证<span style="color: lime">一个测试只关注于一个小的行为</span>，测试与测试之间<span style="color: lime">相互独立</span>。</p>
+          <p class="fragment fade-in">你会发现<span style="color: lime">单一职责原则（SRP）</span>是为测试方法保驾护航的绝佳指导方针。</p>
+
+          <aside data-markdown class="notes">
+            好的单元测试关注于验证一小块代码，这符合对“单元”这个词的定义，与你的测试产生交互的代码越多（不管是直接的还是间接的），就会越发的事与愿违。
+
+            一个测试尽量保证只有一个断言，在你开始为一个测试添加第二个断言的时候，请先问问自己：“这个断言是否有助于验证这个单一的行为？或者，它所表现出的这个行为是否可以用另一个测试的名字来描述？”
+
+            如果一个测试会因多于一个的原因而报错，请考虑将其拆分成多个测试，这样每当一个测试报错的时候，就能清晰准确的反映出其原因。
+          </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">R</span>epeatable</h4>
+          <h4><span style="color: red">R</span>epeatable - 测试必须可复验！</h4>
         </section>
         <section style="text-align: left">
           <h4><span style="color: red">S</span>elf-Validating</h4>
