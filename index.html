@@ -249,10 +249,24 @@
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">S</span>elf-Validating</h4>
+          <h4><span style="color: red">S</span>elf-Validating<span class="fragment fade-in"> - 好的测试应该能够自确认！</span></h4>
+          <p class="fragment fade-in">写测试是为了<span style="color: lime">节省时间</span>而<span style="color: lime">不是</span>为了<span style="color: lime">花费更多的时间</span>。</p>
+          <p class="fragment fade-in">所以，测试应当能够<span style="color: lime">自排列</span>、<span style="color: lime">及时</span>、<span style="color: lime">恰到好处</span>的<span style="color: lime">自动化运行</span>，并且能够<span style="color: lime">快速</span>、<span style="color: lime">准确</span>的<span style="color: lime">确认结果</span>，尽可能的<span style="color: lime">不需要手动操作或设置</span>。</p>
+          <p class="fragment fade-in">我们所面对的问题只有两个：如何<span style="color: lime">最细粒度</span>的自动化运行<span style="color: lime">因修改而影响到的</span>测试，以及如何<span style="color: lime">最快速的</span>自动化运行<span style="color: lime">全部的</span>测试（单元测试、集成测试等全部类型的测试）。</p>
+          <p class="fragment fade-in">单元测试<span style="color: lime">良好的排列组织方式</span>、<span style="color: lime">遵守测试原则</span>以及<span style="color: lime">自动化测试工具</span>是应对此问题的重要武器。</p>
+
+          <aside data-markdown class="notes">
+            良好的单元测试组织排列方式能够有效的提升自动化测试运行时的速度和反馈信息的明确性。
+
+            第一个问题当前的解决方案是：利用 IntelliJ 内置的测试工具来快速进行小范围的测试，或者使用 Infinitest 来自动测试受影响的测试。
+
+            第二个问题当前的解决方案是：利用 CI 工具，比如 Jenkins 等。
+
+            Infinitest 只解决到了每一次编译的粒度上，而且存在代码维护不及时的问题。终极方案是达到至少行级的粒度，这就不得不提到神器 nCrunch。
+          </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">T</span>imely</h4>
+          <h4><span style="color: red">T</span>imely - 好的测试应该足够及时！</h4>
         </section>
       </section>
 
