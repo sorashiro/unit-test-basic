@@ -207,7 +207,7 @@
           </ol>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">F</span>ast<span class="fragment fade-in"> - 测试要足够快！</span></h4>
+          <h4><span style="color: red">F</span>ast<span class="fragment fade-in"> - 好的测试应该足够快！</span></h4>
           <p class="fragment fade-in">单元测试的价值在于<span style="color: lime">持续</span>、<span style="color: lime">全面</span>、<span style="color: lime">快速</span>的反馈系统的健康程度，测试速度的降低将直接导致这些能力的降低。</p>
           <p class="fragment fade-in">所以，你需要确保测试<span style="color: lime">易于编写</span>，代码<span style="color: lime">减少依赖</span>。</p>
           <p class="fragment fade-in">你的实现代码越符合<span style="color: lime">面向对象设计（OOD）</span>的原则，你的单元测试就越容易编写。</p>
@@ -221,7 +221,7 @@
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">I</span>solated<span class="fragment fade-in"> - 隔离你的测试！</span></h4>
+          <h4><span style="color: red">I</span>solated<span class="fragment fade-in"> - 好的测试应该相互隔离！</span></h4>
           <p class="fragment fade-in">你应当能够在<span style="color: lime">任何时间</span>，以<span style="color: lime">任何顺序</span>，运行<span style="color: lime">任何一个测试。</span></p>
           <p class="fragment fade-in">所以，你需要确保单元测试<span style="color: lime">不依赖于任何外部资源</span>，<span style="color: lime">不依赖于任何其它单元测试</span>，并且保证<span style="color: lime">一个测试只关注于一个小的行为</span>，测试与测试之间<span style="color: lime">相互独立</span>。</p>
           <p class="fragment fade-in">你会发现<span style="color: lime">单一职责原则（SRP）</span>是为测试方法保驾护航的绝佳指导方针。</p>
@@ -231,11 +231,22 @@
 
             一个测试尽量保证只有一个断言，在你开始为一个测试添加第二个断言的时候，请先问问自己：“这个断言是否有助于验证这个单一的行为？或者，它所表现出的这个行为是否可以用另一个测试的名字来描述？”
 
-            如果一个测试会因多于一个的原因而报错，请考虑将其拆分成多个测试，这样每当一个测试报错的时候，就能清晰准确的反映出其原因。
+            如果一个测试会因多于一个的原因而被打破，请考虑将其拆分成多个测试，这样每当一个测试报错的时候，就能清晰准确的反映出其原因。
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">R</span>epeatable - 测试必须可复验！</h4>
+          <h4><span style="color: red">R</span>epeatable<span class="fragment fade-in"> - 好的测试应该可复验！</span></h4>
+          <p class="fragment fade-in"><span style="color: lime">每一个测试</span>应当在<span style="color: lime">每一次运行</span>时产生与之前<span style="color: lime">一样的结果</span>。</p>
+          <p class="fragment fade-in">所以，你需要<span style="color: lime">排除</span>可能对测试结果<span style="color: lime">产生不确定性干扰</span>的影响，比如<span style="color: lime">时间因素</span>和<span style="color: lime">外部环境</span>。</p>
+          <p class="fragment fade-in">你可以使用<span style="color: lime">模拟对象（Mock Object）</span>和<span style="color: lime">其它工具</span>来做到这一点，比如 Java 8 中新增的 java.time.Clock 的 fixed() 方法。</p>
+
+          <aside data-markdown class="notes">
+            测试并不是凭空出现的，你设计了它，所以它应当处于你的完全掌控下。既然测试已按照你的预期工作，那么它就应该不受外界因素的影响，每一次且永远的保证测试按照预期工作。
+
+            破坏复验的问题通常发生在测试中使用了可变的时间（比如受时区、零点、夏令时影响的时间），或者使用了数据库、网络连接、不一致的环境等不稳定，或容易造成差异的东西。
+
+            当这些问题发生时你经常会得到一次惊喜，而这些问题往往不是 Bug，一般都是由于测试代码存在问题，你可能因此而浪费大量的时间在寻找问题的原因上。
+          </aside>
         </section>
         <section style="text-align: left">
           <h4><span style="color: red">S</span>elf-Validating</h4>
