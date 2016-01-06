@@ -323,18 +323,27 @@
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">I</span>nverse Relationships - 能否检查逆关系？</h4>
-          <p>一句话：<span style="color: lime">正向得到的结果如果正确，那么反向推导回去也应该正确。</span></p>
+          <h4><span style="color: red">I</span>nverse Relationships<span class="fragment fade-in"> - 能否检查反向关系？</span></h4>
+          <p class="fragment fade-in">一句话：<span style="color: lime">正向得到的结果如果正确，那么反向推导回去也应该正确。</span></p>
+          <p class="fragment fade-in">尽可能<span style="color: lime">避免</span>在检查反向关系的时候<span style="color: lime">调用</span>与正向实现中<span style="color: lime">相同的方法或依赖</span>，因为它<span style="color: lime">有可能出错</span>。</p>
+          <p class="fragment fade-in"><span style="color: lime">Cross-Check（交叉检查）</span>是解决此类问题的有效办法。</p>
 
           <aside data-markdown class="notes">
             [Inverse Relationships](https://en.wikipedia.org/wiki/Negative_relationship) 在数学和统计学上各有一定的意义。
+
+            比如可以用平方的方式来检查一个计算平方根的方法，用读取记录的方式检查插入记录的方法等。
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">C</span>ross-Check - 能否用其它手段对结果进行再确认？</h4>
+          <h4><span style="color: red">C</span>ross-Check<span class="fragment fade-in"> - 能否用其它手段对结果进行再确认？</span></h4>
+          <p class="fragment fade-in">一个问题<span style="color: lime">往往</span>会有<span style="color: lime">多种解决方案</span>，而我们选择使用<span style="color: lime">其中一个</span>解决方案的时候，一般都是因为我们觉得它<span style="color: lime">看上去更漂亮</span>。</p>
+          <p class="fragment fade-in">所以，那些<span style="color: lime">相比之下较为丑陋</span>的解决方案，恰恰就可以<span style="color: lime">成为交叉检查的工具</span>。</p>
+          <p class="fragment fade-in">另一种办法是，可以使用<span style="color: lime">测试目标自身存在</span>的那些<span style="color: lime">相互之间存在某种平衡性约束</span>的东西，用它们去<span style="color: lime">相互检测</span>对方是否正确。</p>
 
           <aside data-markdown class="notes">
             [Cross-Check](https://en.wikipedia.org/wiki/Cross-checking)：联想下坐飞机时空姐在起飞前会收到机长或乘务长的命令：飞机即将起飞，请相互确认。这句话的英文就是：Cross Check。意思就是用其它手段（包括换人）来对事务进行再一次检测。
+
+            比如图书馆书籍的库存数和借出数，可以相互去检测对方是否正确，因为它们之间存在平衡性的约束。
           </aside>
         </section>
         <section style="text-align: left">
