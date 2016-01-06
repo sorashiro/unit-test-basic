@@ -80,6 +80,7 @@
             <li>维基百科</li>
             <li>个人经验</li>
             <li>学习总结</li>
+            <li>新发现</li>
           </ul>
         </section>
       </section>
@@ -91,8 +92,7 @@
         <section>
           <h3>什么是单元测试（Unit Test）？</h3>
           <p class="fragment fade-in">
-            "Unit testing is when you write test code to verify
-            <span class="fragment grow highlight-red">units</span> of code."
+            "Unit testing is when you write test code to verify <span class="fragment grow highlight-red">units</span> of code."
           </p>
 
           <aside data-markdown class="notes">
@@ -151,34 +151,59 @@
 
       <section>
         <section>
-          <h2>在 IntelliJ IDEA 中使用 JUnit</h2>
+          <h2>使用 JUnit</h2>
         </section>
         <section>
           <h3>引入 JUnit</h3>
+          <p>（演示）</p>
         </section>
         <section>
           <h3>文件结构</h3>
+          <p>（演示）</p>
         </section>
         <section>
           <h3>运行测试</h3>
+          <p>（演示）</p>
         </section>
         <section>
           <h3>运行原理</h3>
+          <p style="text-align: left">运行<span style="color: lime">每一个测试用例</span>（有 @Test 的方法）时，都会<span style="color: lime">单独实例化一个这个测试用例所属的测试类</span>，这样的好处是：<span style="color: lime">互不干扰</span>。</p>
         </section>
       </section>
 
       <section>
         <section>
-          <h2>如何组织测试？</h2>
+          <h2>如何正确的书写测试？</h2>
         </section>
         <section>
-          <h3>逻辑一致</h3>
+          <h3>测试用例（Test Case）</h3>
         </section>
         <section>
-          <h3>测试即文档</h3>
+          <h3>代码逻辑顺序</h3>
         </section>
         <section>
-          <h3>Case, Fixture, Suite</h3>
+          <h3>测试用例描述</h3>
+        </section>
+        <section>
+          <h3>测试夹具（Fixture）</h3>
+        </section>
+        <section>
+          <h3>测试套件（Suite）</h3>
+        </section>
+        <section>
+          <h3>忽略测试</h3>
+        </section>
+        <section>
+          <h3>模拟（Mock）</h3>
+        </section>
+        <section>
+          <h3>如何测试异常？</h3>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>需要注意的东西</h2>
         </section>
         <section>
           <h3>测试行为而不是测试方法</h3>
@@ -188,9 +213,6 @@
         </section>
         <section>
           <h3>关注何种价值？单一目标测试</h3>
-        </section>
-        <section>
-          <h3>保持测试的相关性</h3>
         </section>
       </section>
 
