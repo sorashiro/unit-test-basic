@@ -307,6 +307,8 @@
           <p class="fragment fade-in">换句话说：<span style="color: lime">首先，你必须知道你的代码怎样才算运行正确了！</span></p>
 
           <aside data-markdown class="notes">
+            为什么叫做 Happy-Path？因为如果达成了某些目标，最终用户会 Happy。
+
             举个简单的例子：你所测试的一个方法是实现一个加法计算，这个方法接受两个参数并返回这两个参数的和，你可以在测试时输入1和2然后得到3，也可以输入100和200然后得到300，但是我们到底应该输入哪一种才能证明这个代码运行时正确的？如果你会在这里纠结，显然没有搞清楚这个代码的行为是什么，它就是为了实现一个加法，所以不要搞那么复杂。
 
             你所写的单元测试，文档化记录了你对上述内容的理解，当面对变化时，你至少应当知道当前代码的行为是怎样的。
@@ -347,9 +349,21 @@
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">E</span>rror Conditions - 能否强制触发错误条件？</h4>
+          <h4><span style="color: red">E</span>rror Conditions<span class="fragment fade-in"> - 能否强制触发错误条件？</span></h4>
+          <p class="fragment fade-in">既然有 Happy-Path，那么就一定会存在 <span style="color: lime">Unhappy-Path</span>，而我们也需要去<span style="color: lime">尝试应对</span>可能导致 Unhappy 的情况。</p>
+          <p class="fragment fade-in">强制触发错误条件就是为了去<span style="color: lime">检验</span>那些我们<span style="color: lime">尝试应对</span> Unhappy 所准备的方法是否能够<span style="color: lime">正常工作</span>。</p>
+          <p class="fragment fade-in"><span style="color: lime">Fishbowl</span> 和 <span style="color: lime">Mock</span> 会是你的好帮手。</p>
 
           <aside data-markdown class="notes">
+            举例：
+
+            - Running out of memory
+            - Running out of disk space
+            - Issues with wall-clock time
+            - Network availability and errors
+            - System load
+            - Limited color palette
+            - Very high or very low video resolution
           </aside>
         </section>
         <section style="text-align: left">
