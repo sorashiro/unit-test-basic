@@ -109,7 +109,7 @@
               一小段展现出某些“有用的行为”的代码
             </li>
             <li class="fragment fade-in">
-              一个单元自身通常不表示完整的端对端（end-to-end）行为，它只表示这个端对端行为中的一个子部分。
+              一个单元自身<span style="color: lime">通常</span>不表示完整的端对端（end-to-end）行为，它只表示这个端对端行为中的一个子部分。
             </li>
           </ul>
         </section>
@@ -140,7 +140,9 @@
           </p>
 
           <aside data-markdown class="notes">
-            这一句话清晰的指出了单元测试与集成测试或验收测试的区别和侧重，请再一次牢记：单元测试不验证端对端的行为。
+            这一句话清晰的指出了单元测试与集成测试或验收测试的区别和侧重，请再一次牢记：单元测试不验证端对端的行为，不要把单元测试和单元级别的集成测试搞混淆。
+
+            单元测试造成了端对端之间的测试缝隙，所以要考集成测试来填补这些缝隙。
 
             集成测试和验收测试的内容不属于我们所讨论的范围，所以不多做讲解。
           </aside>
@@ -367,9 +369,14 @@
           </aside>
         </section>
         <section style="text-align: left">
-          <h4><span style="color: red">P</span>erformance - 性能特性是否在允许范围内？</h4>
+          <h4><span style="color: red">P</span>erformance<span class="fragment fade-in"> - 性能特性是否在允许范围内？</span></h4>
+          <p class="fragment fade-in">性能问题需要用<span style="color: lime">真实的数据</span>，<span style="color: lime">真实的场景</span>，<span style="color: lime">反复的</span>，<span style="color: lime">较长时间的</span>，<span style="color: lime">更高级别的测试</span>来验证，<span style="color: lime">用测试数据说话而不是靠猜测</span>，而<span style="color: lime">单元级别的</span>性能测试则是最后进行精准定位的工具。</p>
+          <p class="fragment fade-in">请注意，纯粹用<span style="color: lime">单元测试</span>来验证<span style="color: lime">非端对端的</span>，因纯<span style="color: lime">代码书写</span>造成的性能问题是<span style="color: lime">极其少有的</span>，这也应该是最后一个定位的手段了。</p>
 
           <aside data-markdown class="notes">
+            再一次提醒：不要搞混单元测试和单元级别的某种测试。
+
+            这方面的问题涉及性能优化这个比较大的领域，所以不做过多的讲解。
           </aside>
         </section>
       </section>
@@ -395,6 +402,9 @@
           <p>值是否符合预期的格式？</p>
 
           <aside data-markdown class="notes">
+            字符串比较也是一种格式匹配。
+
+            [VerbalExpressions](http://verbalexpressions.github.io/) - 解决了写正则表达式很困难的问题，也使得用正则表达式作为一种交叉检查的工具成为了可能。
           </aside>
         </section>
         <section style="text-align: left">
