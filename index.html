@@ -304,10 +304,12 @@
           <h4><span style="color: red">Right</span><span class="fragment fade-in"> - 结果是正确的吗？</span></h4>
           <p class="fragment fade-in">目标看似简单，但它离不开一个领域叫做：<a href="https://en.wikipedia.org/wiki/Happy_path">Happy-Path</a> 测试 —— 一个<span style="color: lime">定义良好的测试用例</span>应当使用<span style="color: lime">明确的输入</span>，执行时<span style="color: lime">不会产生异常</span>，并且产生<span style="color: lime">预期的输出</span>。</p>
           <p class="fragment fade-in">它所反映的一个重要问题是：<span style="color: lime">我怎样才能知道我的代码是运行正确的呢？</span>如果你不能回答这个问题，说明你还不了解<span style="color: lime">最终用户的目标</span>或者所面对的<span style="color: lime">代码的行为</span>。</p>
-          <p class="fragment fade-in">你所写的单元测试，<span style="color: lime">文档化记录</span>了你对上述内容的<span style="color: lime">理解</span>，当面对变化时，你至少应当知道当前代码的行为是怎样的。</p>
+          <p class="fragment fade-in">换句话说：<span style="color: lime">首先，你必须知道你的代码怎样才算运行正确了！</span></p>
 
           <aside data-markdown class="notes">
             举个简单的例子：你所测试的一个方法是实现一个加法计算，这个方法接受两个参数并返回这两个参数的和，你可以在测试时输入1和2然后得到3，也可以输入100和200然后得到300，但是我们到底应该输入哪一种才能证明这个代码运行时正确的？如果你会在这里纠结，显然没有搞清楚这个代码的行为是什么，它就是为了实现一个加法，所以不要搞那么复杂。
+
+            你所写的单元测试，文档化记录了你对上述内容的理解，当面对变化时，你至少应当知道当前代码的行为是怎样的。
           </aside>
         </section>
         <section style="text-align: left">
