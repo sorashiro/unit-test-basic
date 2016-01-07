@@ -86,6 +86,17 @@
       </section>
 
       <section>
+        <h2>特别强调</h2>
+        <p>
+          本演示是以“<span class="fragment highlight-red">先实现后测试</span>”为前提而展开的。
+        </p>
+
+        <aside data-markdown class="notes">
+          所以包含了在对遗留代码补充单元测试时所需要注意的内容。
+        </aside>
+      </section>
+
+      <section>
         <section>
           <h2>一些基础概念</h2>
         </section>
@@ -300,19 +311,57 @@ public void testAssertThatHamcrestCoreMatchers() {
 
       <section>
         <section>
-          <h2>需要注意的东西</h2>
+          <h2>一些需要注意的事情</h2>
         </section>
-        <section>
+        <section style="text-align: left">
           <h3>测试行为而不是测试方法</h3>
+          <p>在你写单元测试<span style="color: lime">之前</span>，必须<span style="color: lime">先搞清楚</span>：你测试的是一个类的<span style="color: lime">全部行为的集合</span>，而<span style="color: lime">不是</span>它的<span style="color: lime">每一个独立的方法</span>。</p>
+
+          <aside data-markdown class="notes">
+            其实从类的定义上来说，方法就是类的行为的接口。
+
+            也就是说，有些类的方法可能只是包含在了某个单元测试中，因为它如果脱离了这个行为则没有任何意义，它不需要被单独测试。
+
+            举个 ATM 机的例子：
+            - ATM 类有三个方法 deposit(), withdraw(), getBalance()
+            - 你只需要测试五种动作：单次存款，多次存款，单次取款，多次取款，企图超额取款
+            - 我们不需要为 getBalance() 方法专门写单元测试，因为以上5个行为都需要获取余额才能工作
+
+            在 Java 中，get 访问器也是一种方法，明白以上道理可以避免我们去测试一些无测试意义的方法，而避免产生大量无测试意义的方法的有效办法只有：测试先行。
+          </aside>
         </section>
-        <section>
-          <h3>测试与生产代码的关系</h3>
+        <section style="text-align: left">
+          <h3>测试与生产的关系</h3>
+          <p>单元测试是一个<span style="color: lime">纯粹的编程活动</span>，没有客户、最终用户或者非程序员的角色会看到并运行你的测试。</p>
+          <p>所以，<span style="color: lime">请对自己好点</span>，不断去寻求<span style="color: lime">更好</span>的<span style="color: lime">代码设计技巧</span>和<span style="color: lime">单元测试技巧</span>来<span style="color: lime">让写测试变得更容易</span>吧！</p>
         </section>
-        <section>
-          <h3>关注何种价值？单一目标测试</h3>
+        <section style="text-align: left">
+          <h3>专注和单一的价值</h3>
+          <p><span style="color: lime">做人要坦荡荡</span>，这样出了问题以后就<span style="color: lime">不会掰扯不清</span>……</p>
+
+          <aside data-markdown class="notes">
+            单元测试要分离的足够清晰，一个测试只关注一个行为，当一个测试有多个断言的时候，这时候往往就是混淆了行为。
+
+            这样，一旦测试失败，我们就能够很快速的从测试的描述上定位失败的原因。
+          </aside>
         </section>
-        <section>
+        <section style="text-align: left">
+          <h3>保持测试的相关性</h3>
+          <p>这样的好处就是<span style="color: lime">提升运行和维护测试时的便捷性</span>。</p>
+          <p>JUnit: <a href="https://github.com/junit-team/junit/wiki/Categories">Category</a> &amp; <a href="https://github.com/junit-team/junit/wiki/Ignoring-tests">Ignoring a Test</a></p>
+          <aside data-markdown class="notes">
+            单元测试要分离的足够清晰，一个测试只关注一个行为，当一个测试有多个断言的时候，这时候往往就是混淆了行为。
+
+            这样，一旦测试失败，我们就能够很快速的从测试的描述上定位失败的原因。
+          </aside>
+        </section>
+        <section style="text-align: left">
           <h3>写断言时慎用不靠谱的预期目标</h3>
+          <p>因为：<span style="color: lime">你怎么能证明这些预期目标是对的呢？</span></p>
+
+          <aside data-markdown class="notes">
+            这些东西往往会是：某种表达式（直接使用正则表达式，然而后面会说到一个神器），或者储存了一段逻辑的执行结果的变量等。
+          </aside>
         </section>
       </section>
 
