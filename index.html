@@ -215,6 +215,31 @@ public void tearDown() {
           <h3>Case, Fixture, Suite</h3>
         </section>
         <section>
+          <pre><code class="java" data-trim="">
+// Suite
+class Profile_MatchesCriterionTest {
+    @Before public void setup() {}; // Fixture
+    @Test public void trueWhenMatchesSoleAnswer() {}; // Case
+    @Test public void falseWhenNoMatchingAnswerContained() {}; // Case
+    @Test public void trueWhenOneOfMultipleAnswerMatches() {}; // Case
+    @Test public void trueForAnyDontCareCriterion() {}; // Case
+    @After public void tearDown() {}; // Fixture
+}
+
+// Suite
+class Profile_MatchesCriteriaTest {
+    @Test public void falseWhenNoneOfMultipleCriteriaMatch() {}; // Case
+    @Test public void trueWhenAnyOfMultipleCriteriaMatch() {}; // Case
+    @Test public void falseWhenAnyMustMeetCriteriaNotMet() {}; // Case
+}
+
+// Suite
+class Profile_ScoreTest {
+    @Test public void zeroWhenThereAreNoMatches() {}; // Case
+}
+          </code></pre>
+        </section>
+        <section>
           <h4>测试用例（Test Case）</h4>
         </section>
         <section>
