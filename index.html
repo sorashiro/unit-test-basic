@@ -244,6 +244,8 @@ class Profile_Score {
           <aside data-markdown class="notes">
             解释下 Case, Fixture, Suite。
 
+            一般在 Before 中初始化测试环境，比如清理数据库，在 After 中确保关闭某种东西，比如数据库连接（然而这不是单元测试）。
+
             演示下能从这样的代码中还原怎样的行为：还原 Profile 类。
 
             这是我在综合各种写法基础上总结并建议的书写风格。
@@ -264,13 +266,35 @@ class Profile_Score {
           <h2>一些增强语义化的神器</h2>
         </section>
         <section>
-          <h3>Assert 神器</h3>
+          <h3>Matcher 神器</h3>
+          <h4><a href="http://hamcrest.org/">Hamcrest</a></h4>
+          <pre><code class="java" data-trim>
+// Core Hamcrest Matchers with assertThat
+@Test
+public void testAssertThatHamcrestCoreMatchers() {
+    assertThat("good", allOf(equalTo("good"), startsWith("good")));
+    assertThat("good", not(allOf(equalTo("bad"), equalTo("good"))));
+    assertThat("good", anyOf(equalTo("bad"), equalTo("good")));
+    assertThat(7, not(CombinableMatcher.&lt;Integer&gt; either(equalTo(3)).or(equalTo(4))));
+    assertThat(new Object(), not(sameInstance(new Object())));
+}
+          </code></pre>
         </section>
         <section>
           <h3>Mock 神器</h3>
+          <h4><a href="http://mockito.org/">Mockito</a></h4>
+
+          <aside data-markdown class="notes">
+            需要搞明白什么是 Stub，什么是 Mock，这部分以后拿出来专门讲。
+          </aside>
         </section>
         <section>
           <h3>异常处理和测试神器</h3>
+          <h4><a href="http://stefanbirkner.github.io/fishbowl">Fishbowl</a></h4>
+
+          <aside data-markdown class="notes">
+            Fishbowl 基于 Java 8 的 Lambda 表达式，消除了 try...catch... 和 Annotation（注记）带来的麻烦，增强了逻辑表现力，保护了 AAA 结构。
+          </aside>
         </section>
       </section>
 
