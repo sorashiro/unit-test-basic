@@ -215,31 +215,6 @@ public void tearDown() {
           <h3>Case, Fixture, Suite</h3>
         </section>
         <section>
-          <pre><code class="java" data-trim="">
-// Suite
-class Profile_MatchesCriterionTest {
-    @Before public void setup() {}; // Fixture
-    @Test public void trueWhenMatchesSoleAnswer() {}; // Case
-    @Test public void falseWhenNoMatchingAnswerContained() {}; // Case
-    @Test public void trueWhenOneOfMultipleAnswerMatches() {}; // Case
-    @Test public void trueForAnyDontCareCriterion() {}; // Case
-    @After public void tearDown() {}; // Fixture
-}
-
-// Suite
-class Profile_MatchesCriteriaTest {
-    @Test public void falseWhenNoneOfMultipleCriteriaMatch() {}; // Case
-    @Test public void trueWhenAnyOfMultipleCriteriaMatch() {}; // Case
-    @Test public void falseWhenAnyMustMeetCriteriaNotMet() {}; // Case
-}
-
-// Suite
-class Profile_ScoreTest {
-    @Test public void zeroWhenThereAreNoMatches() {}; // Case
-}
-          </code></pre>
-        </section>
-        <section>
           <h4>测试用例（Test Case）</h4>
         </section>
         <section>
@@ -250,6 +225,35 @@ class Profile_ScoreTest {
         </section>
         <section>
           <h3>测试即文档</h3>
+          <pre><code class="java" data-trim="">
+// Profile - class, Matches - method, Criterion - input or objective
+class Profile_Matches_Criterion { // Suite
+    @Before public void setup() {}; // Fixture
+    @Test public void true_when_matches_sole_answer() {}; // Case
+    @Test public void false_when_no_matching_answer_contained() {}; // Case
+    @Test public void true_when_one_of_multiple_answer_matches() {}; // Case
+    @Test public void true_for_any_dont_care_criterion() {}; // Case
+    @After public void tearDown() {}; // Fixture
+}
+
+class Profile_Matches_Criteria {
+    @Test public void false_when_none_of_multiple_criteria_match() {};
+    @Test public void true_when_any_of_multiple_criteria_match() {};
+    @Test public void false_when_any_must_meet_criteria_not_met() {};
+}
+
+class Profile_Score {
+    @Test public void zero_when_there_are_no_matches() {};
+}
+          </code></pre>
+
+          <aside data-markdown class="notes">
+            这是我在综合各种写法基础上总结并建议的书写风格。
+
+            用首字母大写的 Snake 命名法来命名 Suite，用 Camel 命名 Fixture，用小写 snake 命名法来命名 Case。
+
+            为什么要用 Snake 命名法？因为 Camel 不适合命名过长的名字。
+          </aside>
         </section>
       </section>
 
