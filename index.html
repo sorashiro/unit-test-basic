@@ -221,9 +221,18 @@ public void tearDown() {
         </section>
         <section>
           <h3>Given...When...Then... 描述结构</h3>
+          <p class="fragment fade-in"><span style="color: lime">given</span>SomeContext<span style="color: lime">When</span>DoingSomeBehavior<span style="color: lime">Then</span>SomeResultOccurs</p>
+          <p class="fragment fade-in"><span style="color: lime">when</span>DoingSomeBehavior<span style="color: lime">Then</span>SomeResultOccurs</p>
+          <p class="fragment fade-in">someResultOccurs<span style="color: lime">When</span>DoingSomeBehavior</p>
+          <p class="fragment fade-in">some_Result_Occurs_<span style="color: lime">When_</span>Doing_Some_Behavior</p>
+          <p class="fragment fade-in">some_result_occurs_<span style="color: lime">when_</span>doing_some_behavior</p>
 
           <aside data-markdown class="notes">
-            话说回来，AAA 顺序也可以用 GWT 来说明，这完全是个信仰问题，不要打架。
+            1. 这是一个符合 BDD 风格的命名方式，但是因为这样的命名太长了，我们通常可以省略到 given 的部分，因为 given 往往从测试类的上下文中获取到。
+            2. 而如果我们将测试类的名字做进一步优化的话，那么我们可以把 Then 这个单词省略掉，把其内容放到前面，很快我们就能看到这么做的好处。
+            3. 然而这样依然还是太难看清楚了，Camel 命名法对长名称的支持实在是太差，所以我们可以用 snake 命名法来解决，事实证明：短不见得能看清。
+            4. 话说回来，AAA 顺序也可以用 GWT 来说明，这完全是个信仰问题，不要打架。
+            5. 既然都用下划线分开了，每个单词首字母大写就有点过分了，我们又不是在写文章标题，所以都小写吧。
 
             [不服请看 Martin Fowler 的博客](http://martinfowler.com/bliki/GivenWhenThen.html)
           </aside>
@@ -261,7 +270,7 @@ class Profile_Score {
 
             这是我在综合各种写法基础上总结并建议的书写风格。
 
-            用首字母大写的 Snake 命名法来命名 Suite，用 Camel 命名 Fixture，用小写 snake 命名法来命名 Case。
+            用首字母大写的 Snake 命名法来命名 Suite（因为其中每个部分都需要重点提示），用 Camel 命名 Fixture，用小写 snake 命名法来命名 Case。
 
             为什么要用 Snake 命名法？因为 Camel 不适合命名过长的名字。
           </aside>
@@ -269,6 +278,9 @@ class Profile_Score {
         <section style="text-align: left">
           <h3>测试在组织和书写方面追求的终极目标是：</h3>
           <h3 class="fragment highlight-red">无限接近言简意赅的自然语言化文档</h3>
+          <aside data-markdown class="notes">
+            所以我们应该在代码的每一个层面上（小到一个变量）都追求最佳的可读性：整洁代码的重要性。
+          </aside>
         </section>
       </section>
 
