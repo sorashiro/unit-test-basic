@@ -218,18 +218,6 @@ public void tearDown() {
           </aside>
         </section>
         <section>
-          <h3>Case, Fixture, Suite</h3>
-        </section>
-        <section>
-          <h4>测试用例（Test Case）</h4>
-        </section>
-        <section>
-          <h4>测试夹具（Fixture）</h4>
-        </section>
-        <section>
-          <h4>测试套件（Test Suite）</h4>
-        </section>
-        <section>
           <h3>测试即文档</h3>
           <pre><code class="java" data-trim="">
 // Profile - class, Matches - method, Criterion - input or objective
@@ -254,12 +242,20 @@ class Profile_Score {
           </code></pre>
 
           <aside data-markdown class="notes">
+            解释下 Case, Fixture, Suite。
+
+            演示下能从这样的代码中还原怎样的行为：还原 Profile 类。
+
             这是我在综合各种写法基础上总结并建议的书写风格。
 
             用首字母大写的 Snake 命名法来命名 Suite，用 Camel 命名 Fixture，用小写 snake 命名法来命名 Case。
 
             为什么要用 Snake 命名法？因为 Camel 不适合命名过长的名字。
           </aside>
+        </section>
+        <section style="text-align: left">
+          <h3>测试在组织和书写方面追求的终极目标是：</h3>
+          <h3 class="fragment highlight-red">无限接近言简意赅的自然语言化文档</h3>
         </section>
       </section>
 
