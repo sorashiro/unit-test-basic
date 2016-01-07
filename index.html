@@ -154,16 +154,24 @@
           <h2>使用 JUnit</h2>
         </section>
         <section>
-          <h3>引入 JUnit</h3>
-          <p>（演示）</p>
+          <h3>太长不读版</h3>
+          <p>
+            <a href="http://junit.org/cookbook.html">http://junit.org/cookbook.html</a>
+          </p>
         </section>
         <section>
-          <h3>文件结构</h3>
+          <h3>引入 JUnit 并运行测试</h3>
           <p>（演示）</p>
-        </section>
-        <section>
-          <h3>运行测试</h3>
-          <p>（演示）</p>
+
+          <aside data-markdown class="notes">
+            - 创建 Java 工程
+            - 创建 src 源码目录
+            - 创建 demo 包
+            - 创建 HelloWorld 演示类
+            - 从 Maven 引入 JUnit
+            - 创建并设置 test 测试源码目录
+            - 创建 HelloWorld 测试代码
+          </aside>
         </section>
         <section>
           <h3>运行原理</h3>
@@ -176,28 +184,62 @@
           <h2>如何正确的书写测试？</h2>
         </section>
         <section>
-          <h3>测试用例（Test Case）</h3>
+          <h3>AAA 逻辑顺序</h3>
+          <pre><code data-trim class="java">
+@Test
+public void testSay() {
+
+    // Arrange
+    HelloWorld helloWorld = new HelloWorld();
+
+    // Act
+    String result = helloWorld.say();
+
+    // Assert
+    assertEquals("Hello World!", result);
+}
+          </code></pre>
+          <pre class="fragment fade-in"><code data-trim class="java">
+// After (optional)
+
+@After
+public void tearDown() {
+    // Close something...
+}
+          </code></pre>
         </section>
         <section>
-          <h3>代码逻辑顺序</h3>
+          <h3>Given...When...Then... 描述结构</h3>
         </section>
         <section>
-          <h3>测试用例描述</h3>
+          <h3>Case, Fixture, Suite</h3>
         </section>
         <section>
-          <h3>测试夹具（Fixture）</h3>
+          <h4>测试用例（Test Case）</h4>
         </section>
         <section>
-          <h3>测试套件（Test Suite）</h3>
+          <h4>测试夹具（Fixture）</h4>
         </section>
         <section>
-          <h3>忽略测试</h3>
+          <h4>测试套件（Test Suite）</h4>
         </section>
         <section>
-          <h3>模拟（Mock）</h3>
+          <h3>测试即文档</h3>
+        </section>
+      </section>
+
+      <section>
+        <section>
+          <h2>一些增强语义化的神器</h2>
         </section>
         <section>
-          <h3>如何测试异常？</h3>
+          <h3>Assert 神器</h3>
+        </section>
+        <section>
+          <h3>Mock 神器</h3>
+        </section>
+        <section>
+          <h3>异常处理和测试神器</h3>
         </section>
       </section>
 
@@ -213,6 +255,9 @@
         </section>
         <section>
           <h3>关注何种价值？单一目标测试</h3>
+        </section>
+        <section>
+          <h3>写断言时慎用不靠谱的预期目标</h3>
         </section>
       </section>
 
